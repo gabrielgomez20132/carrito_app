@@ -38,13 +38,16 @@ function ProductList() {
             key={product.id}
             className="flex flex-col items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:scale-105"
           >
+            {/* Imagen con tamaño fijo */}
             <img
               src={product.image}
               alt={product.title}
-              className="w-full h-56 object-cover rounded-t-lg"
+              className="w-full h-56 object-contain rounded-t-lg"
             />
             <div className="p-4 flex flex-col items-center">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">{product.title}</h3>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                {product.title.length > 30 ? product.title.slice(0, 30) + '' : product.title}
+              </h3>
               <p className="text-lg text-gray-600 dark:text-gray-400 mt-2">${product.price}</p>
               <button
                 onClick={() => addToCart(product)}
