@@ -46,7 +46,7 @@ function ProductList() {
             />
             <div className="p-4 flex flex-col items-center">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                {product.title.length > 30 ? product.title.slice(0, 30) + '' : product.title}
+                {product.title.length > 30 ? product.title.slice(0, 30) + '...' : product.title}
               </h3>
               <p className="text-lg text-gray-600 dark:text-gray-400 mt-2">${product.price}</p>
               <button
